@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{#if object}}
+		Cập nhật sản phẩm
+	{{else}}
+		Thêm hàng hoá
+	{{/if}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+    <header>{{#if object}}
+		
+	{{else}}
+	<a href="home"><img src="https://cdn.pixabay.com/photo/2012/04/02/16/12/x-24850_960_720.png" alt="" style="height: 50px; margin: 30px;"></a>
+	{{/if}}</header>
+<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-sm-center h-100">
+				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+					<div class="card shadow-lg">
+						<div class="card-body p-5">
+							<h1 class="fs-4 card-title fw-bold mb-4">Product</h1>
+							<form method="POST" class="needs-validation" action="/addnewProduct" novalidate="" autocomplete="off">
+								<input type="hidden" name="id" value="{{object._id}}">
+								<div class="mb-3">
+									<label class="mb-2 text-muted" for="name">Tên sản phẩm</label>
+									<input id="name" type="text" class="form-control" value="{{object.name}}" name="name" required autofocus>
+									<div class="invalid-feedback">
+										Email is invalid
+									</div>
+								</div>
+
+								<div class="mb-3">
+                                    <label class="mb-2 text-muted" for="price">Giá sản phẩm</label>
+									<input id="price"  type="number" class="form-control" value="{{object.price}}"  name="price" required>
+								    <div class="invalid-feedback">
+								    	Price is required
+							    	</div>
+								</div>
+                                <div class="mb-3">
+                                    <label class="mb-2 text-muted" for="image">Link ảnh</label>
+									<input id="image"  type="text" class="form-control" value="{{object.image}}" name="image" required>
+								    <div class="invalid-feedback">
+								    	Price is required
+							    	</div>
+								</div>
+                                <div class="mb-3">
+                                    <label class="mb-2 text-muted" for="color">Màu sắc</label>
+									<input id="color"  type="text" class="form-control" value="{{object.color}}"  name="color" required>
+								    <div class="invalid-feedback">
+								    	Price is required
+							    	</div>
+								</div>
+
+								<div class="d-flex align-items-center">
+									<button type="submit" class="btn btn-primary ms-auto">
+										Add product
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="text-center mt-5 text-muted">
+						Copyright &copy; 2017-2021 &mdash; Your Company 
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
